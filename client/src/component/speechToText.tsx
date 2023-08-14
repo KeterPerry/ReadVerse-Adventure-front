@@ -12,8 +12,17 @@ const SpeechToText: React.FC<Props> = ({ sentences }) => {
     hasRecognitionSupport,
   } = useSpeechRecognition();
 
+  function removePunctuation(txt: any) {
+    var punctuation = /[.,?!\n]/g;
+    var newText = text.replace(punctuation, "");
+    return newText;
+  }
+
   const isEqual = () => {
-    if (text === sentences) {
+    const newText = removePunctuation(text);
+    const newSentences = removePunctuation(sentences);
+    console.log({ newText, newSentences });
+    if (newText && newSentences && newText === newSentences) {
       alert("You had a great job");
     }
     alert("Please try again");

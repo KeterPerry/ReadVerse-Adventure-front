@@ -13,12 +13,14 @@ export const chatController = async (req, res) => {
     const { prompt } = req.body;
     const { data } = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `Write list of 5 short sentences up to 6 words about ${prompt} topic for kids.please include appropriate simple verbs and nouns.`,
+      prompt: `write 5 short sentences up to 6 words about the things we do ${prompt} topic for kids.please include appropriate simple verbs and nouns.
+      join them and write a short passage up to 30 words.`,
       max_tokens: 500,
-      temperature: 0.5,
+      temperature: 0,
     });
     if (data) {
       if (data.choices[0].text) {
+        console.log(typeof data.choices[0].text);
         return res.status(200).json(data.choices[0].text);
       }
     }
@@ -26,3 +28,5 @@ export const chatController = async (req, res) => {
     res.status(404).send(e.message);
   }
 };
+
+//

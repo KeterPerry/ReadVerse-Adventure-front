@@ -12,24 +12,24 @@ function App() {
   const [topic1] = useState<String>("At Home");
   const [sentences, setSentences] = useState<String>("");
 
-  const textstyle = {
-    play: {
-      hover: {
-        backgroundColor: "black",
-        color: "white",
-      },
-      button: {
-        padding: "4",
-        fontFamily: "Helvetica",
-        fontSize: "1.0em",
-        cursor: "pointer",
-        pointerEvents: "none",
-        outline: "none",
-        backgroundColor: "inherit",
-        border: "none",
-      },
-    },
-  };
+  // const textstyle = {
+  //   play: {
+  //     hover: {
+  //       backgroundColor: "black",
+  //       color: "white",
+  //     },
+  //     button: {
+  //       padding: "4",
+  //       fontFamily: "Helvetica",
+  //       fontSize: "1.0em",
+  //       cursor: "pointer",
+  //       pointerEvents: "none",
+  //       outline: "none",
+  //       backgroundColor: "inherit",
+  //       border: "none",
+  //     },
+  //   },
+  // };
   const handlePrompt = () => {
     const FetchTopicData = async () => {
       try {
@@ -67,8 +67,8 @@ function App() {
       <div className="step2">
         <h1 className="">Step 2: Please pick a topic</h1>
         <div className="topics">
-          <div>
-            <div onClick={handlePrompt}>{topic1}</div>
+          <div onClick={handlePrompt}>
+            <div>{topic1}</div>
           </div>
           <div>
             <div>At The resteraunt</div>
@@ -96,7 +96,7 @@ function App() {
           <div>
             <div>
               <Speech
-                styles={textstyle}
+                // styles={textstyle}
                 textAsButton={true}
                 text={sentences}
                 stop={true}
