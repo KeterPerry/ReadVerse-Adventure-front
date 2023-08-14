@@ -109,7 +109,7 @@ function App() {
       <br></br>
       <br></br>
       <br></br>
-      <div>
+      <div className="speechToText">
         <SpeechToText sentences={sentences} />
       </div>
       <br></br>

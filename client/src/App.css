@@ -38,10 +38,35 @@
   height: 35vh;
 }
 p{
+  align-self: center;
   font-size: 1.5rem;
   width:20rem;
 }
 
+.speechToText{
+  align-self: center;
+
+}
+/* .speechBtn{
+  width: max-content;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+} */
+.speechBtn{
+  display: flex;
+  gap:1rem;
+}
+.speechBtn button{
+  font-size: 1.5rem;
+}
+.text{
+  width:25rem;
+  height:25rem;
+  font-size: 1.5rem;
+}
 
   .carousel .thumbs-wrapper {
     margin: 20px;
