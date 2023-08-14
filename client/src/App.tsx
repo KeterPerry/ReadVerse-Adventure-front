@@ -109,9 +109,11 @@ function App() {
       <br></br>
       <br></br>
       <br></br>
-      <div className="speechToText">
-        <SpeechToText sentences={sentences} />
-      </div>
+      {sentences && (
+        <div className="speechToText">
+          <SpeechToText sentences={sentences} />
+        </div>
+      )}
       <br></br>
       <br></br>
       <br></br>
